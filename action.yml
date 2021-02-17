@@ -1,0 +1,16 @@
+name: 'Sample Action'
+description: 'This action simply greetes you.'
+author: 'Aamir Shahab'
+inputs:
+  who-to-greet:
+    description: 'Name of the person to greet'
+    required: true
+    default: 'World'
+outputs:
+  time:
+    description: 'At what time you greeted'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+   - ${{ inputs.who-to-greet }}
